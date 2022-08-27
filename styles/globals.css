@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-html,
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
   padding: 0;
   margin: 0;
+  border: none;
+  outline: none;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
@@ -13,16 +13,61 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  padding: 0px 16px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+h1{
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.container {
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.input-group input{
+  margin-bottom: 16px;
+  height: 48px;
+  font-size: 20px;
+  background-color: #eee;
+  border-radius: 8px;
+  padding: 4px 12px;
+}
+
+.percentage-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:8px;
+}
+
+.percentage-list_box{
+  height: 36px;
+  background-color: #eee;
+  text-align: center;
+  font-size: 20px;
+  line-height: 36px;
+  border-radius: 8px;
+  vertical-align: middle;
 }

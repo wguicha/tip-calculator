@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Home() {
   const [state, setState] = useState({
     billAmount: 0,
-    tipPercentage: 5,
+    tipPercentage: 0,
     noOfPerson: 1,
   });
 
