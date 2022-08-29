@@ -5,8 +5,14 @@ const Result = ({ state }) => {
   const totalTip = (state.billAmount * tipPercentage) / 100;
   return (
     <div className="tip-result">
-      <p>{`Total tip: ${totalTip}`}</p>
-      <p>{`Total tip: ${Number(totalTip / noOfPerson).toFixed(2)}`}</p>
+      <div>
+        <p className="label">Total Tip</p>
+        <p className="result">{`$ ${totalTip.toFixed(2)}`}</p>
+      </div>
+      <div>
+        <p className="label">Tip per Person</p>
+        <p className="result">{`$ ${Number(totalTip / noOfPerson).toFixed(2)}`}</p>
+      </div>
     </div>
   );
 };

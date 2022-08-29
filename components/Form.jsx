@@ -1,7 +1,7 @@
 import React from "react";
 
 const Form = ({ state, updateValues }) => {
-  const { billAmount, tipPercentage } = state;
+  const { billAmount, tipPercentage, noOfPerson } = state;
   const percentages = [5, 10, 15, 20, 25];
   return (
     <div className="input-container">
@@ -13,6 +13,7 @@ const Form = ({ state, updateValues }) => {
               billAmount: e.target.value,
             });
           }}
+          value={billAmount}
           type="number"
           id="billAmount"
         />
@@ -21,7 +22,9 @@ const Form = ({ state, updateValues }) => {
         {percentages.map((p) => {
           return (
             <div
-              className="percentage-list_box"
+              className={`percentage-list__box ${
+                tipPercentage == p ? "active" : ""
+              }`}
               onClick={() => {
                 updateValues({ tipPercentage: p });
               }}
@@ -31,6 +34,7 @@ const Form = ({ state, updateValues }) => {
           );
         })}
         <input
+          className="custom-tip-input"
           onChange={(e) => {
             updateValues({
               tipPercentage:
@@ -41,7 +45,7 @@ const Form = ({ state, updateValues }) => {
                   : e.target.value,
             });
           }}
-          value={tipPercentage}
+          value={`${tipPercentage}`}
           max={100}
           min={0}
           type={"number"}
@@ -52,12 +56,12 @@ const Form = ({ state, updateValues }) => {
         <label htmlFor="noOfPerson">Número Personas:</label>
         <input
           onChange={(e) => {
-            console.log("Paso 1");
             updateValues({
               noOfPerson: e.target.value,
             });
-            console.log(percentages[1]);
           }}
+          min={1}
+          value={noOfPerson}
           type="number"
           id="noOfPerson"
         />
