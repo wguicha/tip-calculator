@@ -1,5 +1,6 @@
 import Form from "../components/Form";
 import Result from "../components/Result";
+import Navbar from "../components/Navbar";
 import { useState } from "react";
 export default function Home() {
   const [state, setState] = useState({
@@ -15,6 +16,10 @@ export default function Home() {
     });
   };
   return (
+    <>
+    <div className="navbar-container">
+      <Navbar />
+    </div>
     <div className="container">
       <h1>Tip Calculator</h1>
         <div className="wrapper">
@@ -22,5 +27,6 @@ export default function Home() {
           <Result state={state} />
         </div>
     </div>
+    </>
   );
 }
