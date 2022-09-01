@@ -1,22 +1,50 @@
 import React from "react";
 
 const Form = ({ state, updateValues }) => {
-  const { billAmount, tipPercentage, noOfPerson } = state;
+  const { loanAmount, intRate, term,  tipPercentage, noOfPerson } = state;
   const percentages = [5, 10, 15, 20, 25];
   return (
     <div className="input-container">
       <div className="input-group">
-        <label htmlFor="billAmount">Valor Total:</label>
-        <input
-          onChange={(e) => {
-            updateValues({
-              billAmount: e.target.value,
-            });
-          }}
-          value={billAmount}
-          type="number"
-          id="billAmount"
-        />
+        <div className="input input-loanAmount">
+          <label htmlFor="loanAmount">Loan Amount:</label>
+          <input
+            onChange={(e) => {
+              updateValues({
+                loanAmount: e.target.value,
+              });
+            }}
+            value={loanAmount}
+            type="number"
+            id="loanAmount"
+          />
+        </div>
+        <div className="input input-intRate">
+          <label htmlFor="intRate">Interest Rate:</label>
+          <input
+            onChange={(e) => {
+              updateValues({
+                intRate: e.target.value,
+              });
+            }}
+            value={`${(intRate*100).toFixed(2)}%`}
+            type="text"
+            id="intRate"
+          />
+        </div>
+        <div className="input input-term">
+          <label htmlFor="term">Number of Months:</label>
+          <input
+            onChange={(e) => {
+              updateValues({
+                term: e.target.value,
+              });
+            }}
+            value={`${(term)} Months`}
+            type="text"
+            id="term"
+          />
+        </div>
       </div>
       <div className="percentage-list">
         {percentages.map((p) => {

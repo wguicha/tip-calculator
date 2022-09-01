@@ -4,7 +4,9 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 export default function Home() {
   const [state, setState] = useState({
-    billAmount: 0,
+    loanAmount: 50000,
+    intRate: .01,
+    term: 60,
     tipPercentage: 0,
     noOfPerson: 1,
   });
