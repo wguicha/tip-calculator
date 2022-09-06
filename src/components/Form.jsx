@@ -6,9 +6,8 @@ const Form = ({ state, updateValues }) => {
   const { loanAmount, intRate, term,  tipPercentage, noOfPerson } = state;
   const percentages = [5, 10, 15, 20, 25];
   const monthlyPayment = PMT(intRate, term,loanAmount, 0 , 0)
-  console.log(monthlyPayment)
   const detail = loanDetail(monthlyPayment, intRate, term, loanAmount, 0)
-  console.log(detail)
+  
   return (
     <div className="input-container">
       <div className="input-group">
@@ -60,7 +59,7 @@ const Form = ({ state, updateValues }) => {
                 tipPercentage == p ? "active" : ""
               }`}
               onClick={() => {
-                updateValues({ tipPercentage: p });
+                updateValues({arrPayments: detail});
               }}
              key={p}
              >{`${p}%`}

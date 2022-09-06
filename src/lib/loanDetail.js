@@ -14,17 +14,18 @@ export function loanDetail(pmt, ir, np, pv, fv) {
      * pv   - present value
      * fv   - future value
      */
+    let arrPayments =[]
 
     for(let i=1;i<=np;i++){
         const detail = new Detail(
         i,
-        pv,
-        pv * ir,
-        pmt + (pv * ir),
-        pv + (pv * ir) + pmt
+        pv.toFixed(2),
+        (pv * ir).toFixed(2),
+        (pmt + (pv * ir)).toFixed(2),
+        (pv + (pv * ir) + pmt).toFixed(2)
         );
-        pv = pv + (pv * ir) + pmt
-        console.log(detail)
+        arrPayments.push(detail)
+        pv = (pv + (pv * ir) + pmt)
     }
-    return Detail;
+    return arrPayments;
 }

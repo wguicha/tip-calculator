@@ -1,6 +1,7 @@
 import Form from "../components/Form";
 import Result from "../components/Result";
 import Navbar from "../components/Navbar";
+import Payments from "../components/Payments";
 import { useState } from "react";
 export default function Home() {
   const [state, setState] = useState({
@@ -9,6 +10,7 @@ export default function Home() {
     term: 60,
     tipPercentage: 0,
     noOfPerson: 1,
+    arrPayments: [],
   });
 
   const updateValues = (newState) => {
@@ -26,6 +28,7 @@ export default function Home() {
       <h1>Tip Calculator</h1>
         <div className="wrapper">
           <Form state={state} updateValues={updateValues} />
+          <Payments state={state} />
           <Result state={state} />
         </div>
     </div>
