@@ -167,6 +167,12 @@ h1{
 
 }
 
+/*Payment List styles*/
+.payment-container{
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 400px){
   .input-group{
     display: flex;
