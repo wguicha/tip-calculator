@@ -21,7 +21,7 @@ export function loanDetail(pmt, ir, np, pv, fv) {
         i,
         pv.toFixed(2),
         (pv * ir).toFixed(2),
-        (pmt + (pv * ir)).toFixed(2),
+        -(pmt + (pv * ir)).toFixed(2),
         (pv + (pv * ir) + pmt).toFixed(2)
         );
         arrPayments.push(detail)

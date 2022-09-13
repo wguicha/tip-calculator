@@ -7,23 +7,38 @@ const Payments = ({ state }) => {
     return (
     <div className="payment-list">
         <table className="payments-table">
-            <tr>
-                <th>Payment</th>
-                <th>Initial Balance</th>
-                <th>Interest</th>
-                <th>Amortization</th>
-                <th>Final Balance</th>
-            </tr>
-            {arrPayments.map((p) => {
-                return (
-                    <tr key={p.numberPayment}>
-                        <td>{`${p.numberPayment}`}</td>
-                        <td>{`${p.intialBalance}`}</td>
-                        <td>{`${p.interestValue}`}</td>
-                        <td>{`${p.amortization}`}</td>
-                        <td>{`${p.finalBalance}`}</td>
-                    </tr>
-            )})}
+            <tbody>
+                <tr>
+                    <th>Payment</th>
+                    <th>Initial Balance</th>
+                    <th>Interest</th>
+                    <th>Amortization</th>
+                    <th>Add Payment</th>
+                    <th>Final Balance</th>
+                </tr>
+                {arrPayments.map((p) => {
+                    return (
+                        <tr key={p.numberPayment}>
+                            <td>{`${p.numberPayment}`}</td>
+                            <td>{`${p.intialBalance}`}</td>
+                            <td>{`${p.interestValue}`}</td>
+                            <td>{`${p.amortization}`}</td>
+                            <td>
+                                <input
+                                    onChange={(e) => {
+                                        console.log(p.numberPayment)
+                                        console.log(e.target.value)
+                                        /*updateValues({
+                                            intRate: e.target.value,
+                                        });*/
+                                    }}
+                                    id={"addPay-"+p.numberPayment}>
+                                </input>
+                            </td>
+                            <td>{`${p.finalBalance}`}</td>
+                        </tr>
+                )})}
+            </tbody>
         </table>
     </div>
     );

@@ -25,7 +25,7 @@ export default function Home() {
       <Navbar />
     </div>
     <div className="container">
-      <h1>Tip Calculator</h1>
+      <h1>Loan Calculator</h1>
         <div className="wrapper">
           <Form state={state} updateValues={updateValues} />
           <Payments state={state} />
